@@ -7,7 +7,6 @@ import scala.concurrent.duration._
 import scala.concurrent.Future
 import scala.concurrent.Await
 
-
 // https://www.qoosky.io/techs/e0f555bc87
 class MyActorTerminate extends Actor {
   val log = Logging(context.system, this) // 로그
