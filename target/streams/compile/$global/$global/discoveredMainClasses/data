@@ -1,1 +1,1 @@
-["Main","MyActorTerminateMain","PingPong","io.yian.akka.Main","io.yian.akka.http.AkkaWebServer"]
+["Main","MyActorTerminateMain","PingPong","io.yian.akka.Main","io.yian.akka.http.AkkaWebServer","io.yian.akka.httpslick.server.Server"]
