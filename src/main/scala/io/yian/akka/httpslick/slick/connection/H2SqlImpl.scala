@@ -1,4 +1,4 @@
-package io.yian.akka.slick.connection
+package io.yian.akka.httpslick.slick.connection
 
 import slick.driver.H2Driver
 

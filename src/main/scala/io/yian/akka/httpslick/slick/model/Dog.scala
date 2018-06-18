@@ -1,6 +1,6 @@
-package io.yian.akka.slick.model
+package io.yian.akka.httpslick.slick.model
 
-import io.yian.akka.slick.connection.H2SqlImpl
+import io.yian.akka.httpslick.slick.connection.H2SqlImpl
 import spray.json.DefaultJsonProtocol
 
 trait DogTable extends DefaultJsonProtocol {

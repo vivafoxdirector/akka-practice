@@ -15,7 +15,7 @@ libraryDependencies ++= {
     // Akka Http Experimental
     "com.typesafe.akka" %% "akka-http-experimental" % akkaV,
 
-    // Akka Http
+    // Akka Http Json
     "com.typesafe.akka" %% "akka-http-spray-json-experimental" % akkaV,
 
     // Slick
