@@ -15,7 +15,7 @@ class AriAriActor extends Actor {
   }
 }
 
-object Main {
+object AriAriMain {
   def main(args: Array[String]):Unit = {
     // 무거운 처리. 어플리케이션 내에 하나만 만들도록 한다.
     val system = ActorSystem("mySystem")
