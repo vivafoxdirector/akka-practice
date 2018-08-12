@@ -1,16 +1,10 @@
-package io.yian.akka
+package io.yian.akka.exam1
 
 import akka.actor.{ActorSystem, Actor};
 import akka.actor.Props
 import akka.event.Logging
 
 // ref: http://kimutansk.hatenablog.com/entry/20140725/1406238670
-class ParentActor(name:String, child:ActorRef) extends Actor {
-}
-
-class ChildActor(name:String) extends Actor {
-}
-
 class HelloWorldActor(name:String) extends Actor {
   // Actor initialize
   override def preStart = { println(name + " is started.")}
@@ -26,16 +20,18 @@ class HelloWorldActor(name:String) extends Actor {
   override def postStop = { println(name + " is stopped.") }
 }
 
-object MessageSendApp extends App {
+object HelloWorldApp extends App {
   override def main(args: Array[String]) : Unit = {
-    val system = ActorSystem.apply("MessageSendApp")
-    val childActor = system.actorOf(Props.apply(new ChildActor("child1")))
-    val parentActor = system.actorOf(Props.apply(new ParentActor("parent1", childActor)))
+    val system = ActorSystem.apply("HelloWorldApp")
+    val helloWorldActor = system.actorOf(Props.apply(new HelloWorldActor("actor1")), "HelloWorldActor")
 
-    parentActor ! """Test1"""
-    parentActor ! """Test2"""
+    val result1 = helloWorldActor ! """Test1"""
+    val result2 = helloWorldActor ! """Test2"""
 
-    Thread.sleep(5000)
+    println("Test1 result is " + result1)
+    println("Test2 result is " + result2)
+
+    Thread.sleep(500)
     system.shutdown()
   }
 }

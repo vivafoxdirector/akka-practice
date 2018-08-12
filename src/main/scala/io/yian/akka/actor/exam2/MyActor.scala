@@ -1,3 +1,5 @@
+package io.yian.akka.exam2
+
 import akka.actor.{Actor, ActorSystem, Props}
 import akka.event.Logging
 
