@@ -3,6 +3,7 @@ package io.yian.akka.httpslick.slick.model
 import io.yian.akka.httpslick.slick.connection.H2SqlImpl
 import spray.json.DefaultJsonProtocol
 
+// 참조: https://qiita.com/yabaiwebyasan/items/a4a8be77f39d4a357093
 trait DogTable extends DefaultJsonProtocol {
   this: H2SqlImpl =>
 

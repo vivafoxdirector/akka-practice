@@ -1,3 +1,4 @@
+package io.yian.akka.exam2
 import akka.actor.{Actor, ActorRef, ActorSystem, Props, Terminated}
 import akka.pattern.ask
 import akka.util.Timeout

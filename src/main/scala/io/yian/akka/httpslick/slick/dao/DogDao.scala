@@ -5,6 +5,8 @@ import io.yian.akka.httpslick.slick.model.{Dog, DogTable}
 
 import scala.concurrent.Future
 
+// 참조: https://qiita.com/yabaiwebyasan/items/a4a8be77f39d4a357093
+
 trait DogDao extends DogTable with H2SqlImpl {
   import driver.api._
   protected val dogTableQuery = TableQuery[DogTable]

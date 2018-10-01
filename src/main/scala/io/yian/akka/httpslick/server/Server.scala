@@ -10,6 +10,7 @@ import io.yian.akka.httpslick.slick.model.Dog
 import scala.concurrent.ExecutionContextExecutor
 import scala.io.StdIn
 
+// 참조: https://qiita.com/yabaiwebyasan/items/a4a8be77f39d4a357093
 object Server extends App with DogRoutes with DogDao {
   implicit val system: ActorSystem = ActorSystem()
   implicit val materializer:ActorMaterializer = ActorMaterializer()

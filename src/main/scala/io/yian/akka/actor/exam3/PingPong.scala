@@ -1,4 +1,4 @@
-import io.yian.akka.exam3
+package io.yian.akka.exam3
 import akka.actor.{ActorSystem, Actor, ActorRef, Props, PoisonPill}
 import language.postfixOps
 import scala.concurrent.duration._

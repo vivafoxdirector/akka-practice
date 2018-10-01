@@ -9,6 +9,7 @@ import io.yian.akka.httpslick.slick.model.Dog
 
 import scala.concurrent.ExecutionContextExecutor
 
+// 참조: https://qiita.com/yabaiwebyasan/items/a4a8be77f39d4a357093
 trait DogRoutes extends SprayJsonSupport {
   this:DogDao =>
 

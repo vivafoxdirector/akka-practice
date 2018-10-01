@@ -2,6 +2,7 @@ package io.yian.akka.httpslick.slick.connection
 
 import slick.driver.H2Driver
 
+// 참조: https://qiita.com/yabaiwebyasan/items/a4a8be77f39d4a357093
 trait H2SqlImpl {
     val driver = H2Driver
     import driver.api._
