@@ -10,7 +10,7 @@ object MessageSendApp extends App {
     val parentActor = system.actorOf(Props.apply(new ParentActor("parent1", childActor)))
 
     parentActor ! """Test1"""
-    parentActor ! """Test2""""
+    parentActor ! """Test2"""
 
     Thread.sleep(5000)
 
