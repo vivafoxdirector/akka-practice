@@ -2,7 +2,9 @@ package io.yian.akka.exercise.helloworldv2
 
 import akka.actor.{ActorSystem, Props}
 
-// ref: http://kimutansk.hatenablog.com/entry/20140724/1406151221
+/**
+  * ref: http://kimutansk.hatenablog.com/entry/20140724/1406151221
+  */
 object HelloWorldApp extends App {
   override def main(args: Array[String]) : Unit = {
     val system = ActorSystem.apply("HelloWorldApp")
