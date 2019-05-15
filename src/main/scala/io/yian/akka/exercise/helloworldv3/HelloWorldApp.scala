@@ -11,6 +11,8 @@ object HelloWorldApp extends App {
     val result1 = helloWorldActor ! """Test1"""
     val result2 = helloWorldActor ! """Test2"""
 
+    // 송신측에서 보낸 메시지가 수신 받을거라 예상했지만 수신 받는 못했다. (비동기 때문인가??!!!)
+    // 이것을 개선한 것이 helloWorv4이다.
     println("Test1 result is " + result1)
     println("Test2 result is " + result2)
 
