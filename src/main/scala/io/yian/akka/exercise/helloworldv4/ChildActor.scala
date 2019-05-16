@@ -1,4 +1,4 @@
-package io.yian.akka.exercise.helloworldv3
+package io.yian.akka.exercise.helloworldv4
 
 import akka.actor.Actor
 

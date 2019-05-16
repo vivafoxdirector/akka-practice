@@ -2,6 +2,7 @@ package io.yian.akka.exercise.helloworldv5
 
 import java.util.concurrent.TimeUnit
 
+import akka.pattern.ask
 import akka.actor.{ActorSystem, Props}
 import akka.util.Timeout
 
