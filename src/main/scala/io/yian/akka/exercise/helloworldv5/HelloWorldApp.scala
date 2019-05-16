@@ -15,7 +15,7 @@ import scala.concurrent.Await
   * 비동기를 구현한 것이다.
   * ref: http://kimutansk.hatenablog.com/entry/20140726/1406330944
   */
-class HelloWorldApp extends App {
+object HelloWorldApp extends App {
     override def main(args: Array[String]): Unit = {
         val system = ActorSystem("HelloWorldApp")
         val helloWorldActor = system.actorOf(Props.apply(new HelloWorldActor("actor1")), "HelloWorldActor")
