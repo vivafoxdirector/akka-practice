@@ -1,6 +1,9 @@
-package io.yian.akka.exercise.helloworldv4
+package io.yian.akka.exercise.helloworldv6
 
 import akka.actor.{ActorSystem, Props}
+import akka.routing.RoundRobinRoutingLogic
+
+import scala.collection.immutable
 
 // ref: http://kimutansk.hatenablog.com/entry/20140725/1406238670
 /**
@@ -17,7 +20,7 @@ object MessageSendApp extends App {
 
     val routingLogic = new RoundRobinRoutingLogic
 
-    val parentActor = system.actorOf(Props.apply(new ParentActor("parent1", seq, new RoundRobinRoutingLogic)))
+    val parentActor = system.actorOf(Props.apply(new ParentActor("parent1", seq, routingLogic)))
 
     parentActor ! """Test1"""
     parentActor ! """Test2"""
