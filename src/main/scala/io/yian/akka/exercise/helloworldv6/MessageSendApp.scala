@@ -5,10 +5,9 @@ import akka.routing.RoundRobinRoutingLogic
 
 import scala.collection.immutable
 
-// ref: http://kimutansk.hatenablog.com/entry/20140725/1406238670
 /**
-  * "sender를 사용함으로써 Actor는 가장 마지막 메시지를 보낸 Actor를 참조할 수 있다." 이므로
-  * Actor메시지를 받는 대상은 Actor가 된다. 이를 알아보기 위해 부모와 자식 관계를 가진 Actor를 작성해본다.
+  * Router는 Routing을 하는 Logic클래스와 Routing되는 RouteeList가 필요하다
+  * ref: http://kimutansk.hatenablog.com/entry/20140725/1406238670
   */
 object MessageSendApp extends App {
   override def main(args: Array[String]) : Unit = {
@@ -16,11 +15,10 @@ object MessageSendApp extends App {
     val childActor1 = system.actorOf(Props.apply(new ChildActor("child1")))
     val childActor2 = system.actorOf(Props.apply(new ChildActor("child2")))
     val childActor3 = system.actorOf(Props.apply(new ChildActor("child3")))
+    // 실행을 하면 child1, child2, child3순으로 송신된다.
     val seq = immutable.IndexedSeq(childActor1, childActor2, childActor3)
 
-    val routingLogic = new RoundRobinRoutingLogic
-
-    val parentActor = system.actorOf(Props.apply(new ParentActor("parent1", seq, routingLogic)))
+    val parentActor = system.actorOf(Props.apply(new ParentActor("parent1", seq, new RoundRobinRoutingLogic)))
 
     parentActor ! """Test1"""
     parentActor ! """Test2"""
