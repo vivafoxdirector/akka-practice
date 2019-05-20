@@ -30,6 +30,8 @@ class Ponger(pinger : ActorRef) extends Actor {
 
 object PingPong extends App {
   val system = ActorSystem("pingpong")
+  
+  // Props 인스턴스를 만드는 방법은 아래와 같다.
   val pinger = system.actorOf(Props[Pinger], "pinger")
   //val ponger = system.actorOf(Props(classOf[Ponger], pinger), "ponger")
   val ponger = system.actorOf(Props(new Ponger(pinger)), "ponger")
